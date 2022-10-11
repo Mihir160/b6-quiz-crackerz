@@ -6,7 +6,7 @@ const Statistics = () => {
     const data = datLoader.data
     // console.log(data)
     return (
-        <div className='mt-8'>
+        <div className='lg:mt-8 mt-56'>
             <ResponsiveContainer width="100%" height={650}>
         <LineChart
           width={500}

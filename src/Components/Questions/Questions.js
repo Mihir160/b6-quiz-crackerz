@@ -10,14 +10,11 @@ const Questions = ({question, index}) => {
          if(correntAnswer === answer){
             toast.success('Answer is Right !', {
                 position: toast.POSITION.TOP_CENTER
-            });
-      
-            
-            
+            });  
          }
          
          else{
-            toast.success('Answer is Wrong !', {
+            toast.error('Answer is Wrong !', {
                 position: toast.POSITION.TOP_CENTER
             });
          }
