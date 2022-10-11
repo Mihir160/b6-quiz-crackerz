@@ -1,12 +1,13 @@
 import React from 'react';
 import Lottie from 'lottie-react'
 import quiz from '../assets/quiz.json'
-import Topics from '../Topics/Topics';
+
+import Topic from '../Topic/Topic'
 import { useLoaderData } from 'react-router-dom';
 const Home = () => {
     const topicsloader = useLoaderData()
     const topics = topicsloader.data
-    console.log(topics)
+   
     return (
         <div>
              <div className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-24'>
@@ -33,12 +34,14 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className='mt-8 m-24 grid lg:grid-cols-4 border-solid gap-8 justify-center'>
+               <div className='mt-8 '>
+               <div className='grid lg:grid-cols-4 border-solid justify-items-center gap-4 '>
                     {
-                        topics.map(topic =>(<Topics key={topic.id} topic={topic}></Topics>))
+                        topics.map(topic =>(<Topic key={topic.id} topic={topic}></Topic>))
                     }
                 </div>
-    
+               </div>
+             
                 
         </div>
     );

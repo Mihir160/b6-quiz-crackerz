@@ -1,19 +1,16 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Topic from '../Topic/Topic'
-const Topics = ({topic}) => {
-     
-    const {id, name, logo} = topic
+const Topics = () => {
+    const topicsloader = useLoaderData()
+    const topics = topicsloader.data
+   
+   
     return (
-        <div className='h-56 w-56  border-green-900 mt-12'>
-           
-           <img src={logo} alt="" />
-           <div className='flex justify-around items-center mt-4'>
-            <p><span className=' text-sky-500'>{name}</span></p>
-            <button className='bg-blue-500 p-2 text-white rounded-lg'>Start Practice</button>
-           </div>
-          
-           
+        <div className='grid lg:grid-cols-4 md:grid-cols-2 border-solid justify-items-center mt-8 gap-4 lg:p-48'>
+                    {
+                        topics.map(topic =>(<Topic key={topic.id} topic={topic}></Topic>))
+                    }
         </div>
     );
         
