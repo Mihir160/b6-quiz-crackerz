@@ -1,8 +1,22 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import AnswerToast from '../AnswerToast/AnswerToast'
 const Questions = ({question, index}) => {
 
-//  console.log(question, index)
+
+    const answerloader = (correntAnswer, answer) =>{
+       
+         if(correntAnswer === answer){
+            toast.success('Success Notification !', {
+                position: toast.POSITION.TOP_RIGHT
+            });
+         }
+         else{
+            console.log(false)
+         }
+   
+       }
     return (
         <div >
              <div className="card-body">
@@ -20,8 +34,9 @@ const Questions = ({question, index}) => {
                {
                     question.options.map(answer =>(
                         <div className='flex items-center'>
-                            <input type="radio" name="radio-2" className="radio radio-primary" ></input> 
+                            <input onClick={ () => answerloader(answer, question.correctAnswer)}  type="radio" name="radio-2" className="radio radio-primary" ></input> 
                             <p className='p-2'>{answer}</p>
+                            <ToastContainer />
                         </div>
                     ))
                 }

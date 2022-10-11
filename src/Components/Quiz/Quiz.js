@@ -5,8 +5,9 @@ import Questions from '../Questions/Questions';
 const Quiz = () => {
     const quizData = useLoaderData()
      const {name, questions} = quizData.data
-    //  console.log(questions)
+    console.log(questions)
 
+   
     return (
         <div className='grid grid-cols-1 '>
             <div className='mt-4'>
@@ -16,7 +17,7 @@ const Quiz = () => {
             <div>
             
                 {
-                    questions.map((question, index)  =>(<Questions index={index} key={question.id} question={question}></Questions>))
+                    questions.map((question, index)  =>(<Questions  index={index} key={question.id} question={question}></Questions>))
                 }
             </div>
             </div>
