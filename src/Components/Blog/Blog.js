@@ -39,7 +39,7 @@ const Blog = () => {
               </div>
               <div>
                 <p className="mb-4 text-xl font-medium">
-                React JS useRef Hook
+                what is the use of useRef in react?
                 </p>
                 <p className="text-gray-700">
                 The useRef hook is the new addition in React 16.8. Before proceeding to this article there is a prerequisite to know about the 
