@@ -6,7 +6,7 @@ const Quiz = () => {
     const quizData = useLoaderData()
      const {name, questions} = quizData.data
     console.log(questions)
-
+   
    
     return (
         <div className='grid grid-cols-1 '>
